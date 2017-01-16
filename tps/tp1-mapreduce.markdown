@@ -37,13 +37,12 @@ Grâce à mapReduce, réalisez les requêtes suivantes :
 3. Lister la note moyenne par site (attention besoin de passer par finalize)
 4. Lister le nombre d'articles par catégories pour le site `JV.com`
 5. Lister la note moyenne par catégorie (finalize)
-6.
-7.
-8.
+6. Lister le nombre d'articles de chaque site pour la catégorie `Vulgarisation`
+7. Lister le nombre d'articles postés par année
+8. Lister, par site, combien d'articles il y a dans chaque catégorie
 9.
 10.
 11.
 12.
 13.
 14.
-15. Lister, par site, combien d'articles il y a dans chaque catégorie

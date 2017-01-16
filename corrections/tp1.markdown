@@ -134,3 +134,52 @@ db.rawData.mapReduce(
     }
 );
 ```
+
+6. Lister le nombre d'articles de chaque site pour la catégorie `Vulgarisation`
+
+```
+db.rawData.mapReduce(
+    function () {
+        this.articles.forEach(function (article) {
+            if (article.category == 'Vulgarisation') {
+                emit(this.website, 1);
+            }
+        }, this);
+    },
+    function (key, values) {
+        var total = 0;
+
+        values.forEach(function (value) {
+            total += value
+        });
+
+        return total;
+    },
+    {
+        out : 'q6'
+    }
+);
+```
+
+7. Lister le nombre d'articles postés par année
+
+```
+db.rawData.mapReduce(
+    function () {
+        var length      = this.articles.length;
+        var i;
+
+        for(i = 0; i < length; ++i) {
+            emit(this.articles[i].date.getFullYear(), 1);
+        }
+    },
+    function (key, values) {
+        return Array.sum(values);
+    },
+    {
+        out : 'q4'
+    }
+);
+```
+
+8.
