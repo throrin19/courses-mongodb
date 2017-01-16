@@ -15,7 +15,7 @@ Voici le schéma de la collection sur lequel vous allez travailler :
             "title": String,
             "content": String,
             "date": String,
-            "nbLike": String,
+            "note": Number,
             "category" : String
         }
     ]
@@ -30,10 +30,10 @@ Grâce à mapReduce, réalisez les requêtes suivantes :
 
 **Attention** : Chaque résultat sera à mettre dans une collection différente à chaque fois.
 
-1. 
-2.
-3.
-4.
+1. Lister combien il y a d'utilisateur par site
+2. Lister combien il y a d'articles par site
+3. Lister la note moyenne par site
+4. Lister le nombre d'articles par catégories
 5.
 6.
 7.

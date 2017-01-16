@@ -25,7 +25,7 @@ const WEBSITES = [
     'Deco&Co'
 ];
 
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 2000; i++) {
     db.getCollection("rawData").insertMany(
         _.times(STEPCOUNT, () => {
             let doc = {
@@ -45,7 +45,7 @@ for (let i = 0; i < 10000; i++) {
                     "title": faker.lorem.words(),
                     "content": faker.lorem.paragraphs(),
                     "date": faker.date.past(),
-                    "nbLike": faker.random.number(),
+                    "note": Math.floor(Math.random() * 5),
                     "category" : CATEGORIES[randomizer(CATEGORIES.length - 1)]
                 });
             }
