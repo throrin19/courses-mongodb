@@ -25,7 +25,7 @@ const WEBSITES = [
     'Deco&Co'
 ];
 
-for (let i = 0; i < 2000; i++) {
+for (let i = 0; i < 200; i++) {
     db.getCollection("rawData").insertMany(
         _.times(STEPCOUNT, () => {
             let doc = {
