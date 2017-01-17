@@ -1,5 +1,10 @@
 # TP 1 : MapReduce
 
+<center>
+![img](../res/tp1.jpg)
+<br><br>
+</center>
+
 Voici le schéma de la collection sur lequel vous allez travailler :
 
 ```
@@ -35,14 +40,15 @@ Grâce à mapReduce, réalisez les requêtes suivantes :
 1. Lister combien il y a d'utilisateur par site
 2. Lister combien il y a d'articles par site
 3. Lister la note moyenne par site (attention besoin de passer par finalize)
-4. Lister le nombre d'articles par catégories pour le site `JV.com`
-5. Lister la note moyenne par catégorie (finalize)
-6. Lister le nombre d'articles de chaque site pour la catégorie `Vulgarisation`
-7. Lister le nombre d'articles postés par année
-8. Lister, par site, combien d'articles il y a dans chaque catégorie
-9.
-10.
-11.
-12.
-13.
-14.
+4. Lister le nombre d'articles par catégories
+5. Lister le nombre d'articles par catégories pour le site `JV.com`
+6. Lister la note moyenne par catégorie (finalize)
+7. Lister le nombre d'articles de chaque site pour la catégorie `Vulgarisation`
+8. Lister le nombre d'articles postés par année
+9. Lister, par site, combien d'articles il y a dans chaque catégorie
+10. Lister, par site, et par catégories, combien il y a d'articles chaque année
+11. Lister pour chaque site quels sont les 5 articles les plus récents.
+12. Lister, pour chaque catégorie quels sont les 5 articles les mieux notés de 2017 par ordre alphabétique.
+13. Passage en mode `reduce` :
+    - Reprenez la requête de la question 5
+    - Effectuez la requête pour chaque site et faites un `reduce` sur la collection cible afin de retomber sur le même résultat que la question 4.

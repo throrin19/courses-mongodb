@@ -177,9 +177,98 @@ db.rawData.mapReduce(
         return Array.sum(values);
     },
     {
-        out : 'q4'
+        out : 'q7'
     }
 );
 ```
 
-8.
+9. Lister, par site, combien d'articles il y a dans chaque catégorie
+
+```
+db.rawData.mapReduce(
+    function () {
+        var result = {};
+
+        this.articles.forEach(function (article) {
+            if (!result[article.category]) {
+                result[article.category] = 1;
+            } else {
+                result[article.category] += 1;
+            }
+        });
+
+        emit(this.website, result);
+    },
+    function (key, values) {
+        var result = {};
+
+        values.forEach(function (value) {
+            var keys = Object.keys(value);
+
+            keys.forEach(function (key) {
+                if (!result[key]) {
+                    result[key] = value[key];
+                } else {
+                    result[key] += value[key];
+                }
+            });
+        });    
+
+        return result;
+    },
+    {
+        out : 'q8'
+    }
+);
+```
+
+10. Lister, par site, et par catégories, combien il y a d'articles chaque année
+
+```
+db.rawData.mapReduce(
+    function () {
+        var result = {};
+
+        this.articles.forEach(function (article) {
+            if (!result[article.category]) {
+                result[article.category] = {};
+
+                result[article.category][article.date.getFullYear()] = 1
+            } else if (!result[article.category][article.date.getFullYear()]) {
+                result[article.category][article.date.getFullYear()] = 1;
+            } else {
+                result[article.category][article.date.getFullYear()] += 1;
+            }
+        });
+
+        emit(this.website, result);
+    },
+    function (key, values) {
+        var result = {};
+
+        values.forEach(function (value) {
+            var keys = Object.keys(value);
+
+            keys.forEach(function (key) {
+                var dates = Object.keys(value[key]);
+
+                dates.forEach(function (d) {
+                    if (!result[key]) {
+                        result[key] = {};
+                        result[key][d] = value[key][d];
+                    } else if (!result[key][d]) {
+                        result[key][d] = value[key][d];
+                    } else {
+                        result[key][d] += value[key][d];
+                    }
+                });
+            });
+        });    
+
+        return result;
+    },
+    {
+        out : 'q10b'
+    }
+);
+```
