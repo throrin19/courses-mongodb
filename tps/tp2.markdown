@@ -21,6 +21,8 @@ Voici la liste des différents types possibles :
 - `READ` : Indique que l'utilisateur lis un article. L'article est indiqué par le champ `article` et, s'il vient d'une catégorie, c'est indiqué par le champ `category`.
 - `CLICK_CAT` : Indique que l'utilisateur a cliqué sur une catégorie pour, par exemple, voir les articles qu'elle contient. La catégorie indiqué par le champ `category`
 
+<br>
+
 Vous trouverez, dans le dossier de partage, un fichier `initScriptTP2.js` que vous devrez exécuter dans mongobooster après avoir créé une nouvelle base de donnée.
 
 ## MapReduce
@@ -37,5 +39,5 @@ Vous devrez réaliser les requêtes mapReduce suivantes :
 ## Index
 
 - À partir des requètes précédentes et d'après vous, quel sont les index à créer pour optimiser nos requêtes précédentes ? Vous pouvez effectuer un simple `find()` sur la collection en fonction des queries précédentes couplé à un `explain()` pour vous aider.
-- Créez un index de type texte sur les champs `article` et `category` puis effectuez les requêtes suivantes :
-    - Quels sont les articles et catégories faisant référence aux mots "".
+- Créez un index de type texte sur les champs `article` et `category` puis effectuez la requête suivante :
+    - Combien il y a de lignes de stats pour le type `READ` contenant les mots `politique tempore` ?
