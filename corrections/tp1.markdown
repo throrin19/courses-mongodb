@@ -272,3 +272,37 @@ db.rawData.mapReduce(
     }
 );
 ```
+
+11. Lister pour chaque site quels sont les 5 articles les plus récents.
+
+```
+db.rawData.mapReduce(
+    function () {
+        emit(this.website, {
+            articles : this.articles
+        });
+    },
+    function (key, values) {
+        var allArticles = [];
+
+        values.forEach(function (v) {
+            allArticles = allArticles.concat(v.articles);
+        });
+
+        allArticles = allArticles.sort(function (a, b) {
+            return b.date.getTime() - a.date.getTime();
+        });
+
+        return { articles : allArticles.slice(0, 5) };
+    },
+    {
+        out : 'q11'
+    }
+);
+```
+
+12. Lister, pour chaque catégorie quels sont les 5 articles les mieux notés de 2017 par ordre alphabétique.
+
+```
+
+```
