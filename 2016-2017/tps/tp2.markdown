@@ -17,9 +17,9 @@ La semaine dernière, nous avons utilisé une structure un peu trop complexe et 
 
 Voici la liste des différents types possibles :
 
-- `TIME` : Durée de la navigation. Il peut en avoir plusieurs par utilisateurs s'il s'est rendu plusieur fois sur l'un des sites/articles. La durée en ms est stockée dans `time`.
+- `TIME` : Durée de la navigation. Il peut en avoir plusieurs par utilisateurs s'il s'est rendu plusieurs fois sur l'un des sites/articles. La durée en ms est stockée dans `time`.
 - `READ` : Indique que l'utilisateur lis un article. L'article est indiqué par le champ `article` et, s'il vient d'une catégorie, c'est indiqué par le champ `category`.
-- `CLICK_CAT` : Indique que l'utilisateur a cliqué sur une catégorie pour, par exemple, voir les articles qu'elle contient. La catégorie indiqué par le champ `category`
+- `CLICK_CAT` : Indique que l'utilisateur a cliqué sur une catégorie pour, par exemple, voir les articles qu'elle contient. La catégorie est indiquée par le champ `category`
 
 <br>
 
@@ -41,3 +41,7 @@ Vous devrez réaliser les requêtes mapReduce suivantes :
 - À partir des requètes précédentes et d'après vous, quel sont les index à créer pour optimiser nos requêtes précédentes ? Vous pouvez effectuer un simple `find()` sur la collection en fonction des queries précédentes couplé à un `explain()` pour vous aider.
 - Créez un index de type texte sur les champs `article` et `category` puis effectuez la requête suivante :
     - Combien il y a de lignes de stats pour le type `READ` contenant les mots `politique tempore` ?
+
+## Bonus
+
+S'il vous reste du temps en fin de TP, vous pouvez terminer le TP 1. La correction de ce dernier sera mise en ligne demain.
