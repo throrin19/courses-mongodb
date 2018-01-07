@@ -7,11 +7,12 @@
 2. Les index
 3. Optimisations et performances
 4. MongoDB Compass
+5. Nouveautés MongoDB 3.6
 
 
 ---
 
-# MapReduces
+# I - MapReduces
 
 ### Introduction
 
@@ -153,7 +154,7 @@ db.rawData.mapReduce(
 + **db** : Base de donnée où vous voulez créer la collection.
 
 ---
-# Les index
+# II - Les index
 
 1. Les types d'index
 2. Création d'un index
@@ -264,7 +265,7 @@ db.restaurants.createIndex(
 > Index uniquement sur les champs `cuisine` et `name` les restaurants ayant une note supérieure à 5.
 
 ---
-# Optimisation et performances
+# III - Optimisation et performances
 
 + `explain`
 + Règles de création d'un index
@@ -471,3 +472,32 @@ show profile
 + **Mongostat** : Fonctionne comme vmstat mais uniquement pour le seveur mongo (load average, nombre de processus en queue, ...).
 + **ReplicaSet** : Reéplique les données sur x serveurs permettant d'éviter une coupure si un serveur tombe en panne
 + **Sharding** : Obligatoirement couplé avec du ReplicaSet. Permet de scinder sur plusieurs pools de sharding une collection pour un accès plus rapide.
+
+---
+# IV - MongoDB Compass
+
+- Client MongoDB Officiel
+- Administrer facilement son serveur MongoDB
+- Monitorer en temps réel
+- Afficher les requêtes lentes
+- Voir et optimiser vos requêtes avec un explain visuel
+- ...
+
+---
+# IV - MongoDB Compass
+
+![compass](../resources/compass.png)
+
+> **Attention** : La version Community Edition ne comprend pas la partie performance
+
+---
+# V - MongoDB 3.6
+
+- Publié en décembre 2017
+- Améliore les jointures dans les aggregate
+- Ajout des IP whitelist pour les règles de connexion
+- Validation avec un schéma JSON des données
+- Changement des streams
+	- Partage en temps réel des modifications en BDD
+- ...
+- Liste complète : https://www.mongodb.com/mongodb-3.6
