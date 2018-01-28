@@ -258,7 +258,26 @@ db.cinemas.mapReduce(
 ```
 
 17. ```javascript
-
+db.cinemas.mapReduce(
+    function map() {
+        emit(this.franchise + ' ' + this.year, 1);
+    },
+    function reduce(key, values) {
+        return Array.sum(values)
+    },
+    {
+        out : 'question17',
+        query : {
+            places : {
+                $gt : 4000,
+            }
+            year : {
+                $gte : 2000,
+                $lt : 2010
+            }
+        }
+    }
+)
 ```
 
 18. ```javascript
