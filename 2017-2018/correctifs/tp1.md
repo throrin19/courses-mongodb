@@ -10,7 +10,7 @@ db.cinemas.mapReduce(
     },
     {
         out : 'question1'
-    }
+    } 
 )
 ```
 
